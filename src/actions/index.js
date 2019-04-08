@@ -50,7 +50,7 @@ export const editStream = (id,fromValues) => {
         const response = await streams.patch(`/streams/${id}`, fromValues)
 
         dispatch({type: 'EDIT_STREAM', payload: response.data})
-        history.push('/')
+        history.push('/');
     }
 }
 
@@ -59,5 +59,6 @@ export const deleteStream = (id) => {
         await streams.delete(`/streams/${id}`);
 
         dispatch({type: 'DELETE_STREAM' , payload: id})
+        history.push('/');
     }
 } 
